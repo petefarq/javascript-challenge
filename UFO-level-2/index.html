@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+  <meta charset="utf-8">
+  <title>UFO Finder</title>
+  <link rel="stylesheet" href="static/css/bootstrap.css">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</head>
+
+<!-- Sets full page background image -->
+<body class = "font-weight-light text-white" style = "background: url(static/images/background.jpg) no-repeat center center fixed; 
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;">
+  
+  <div class="wrapper" >
+    
+    <div class="container">
+      <div class = "row">
+        <div class = "col-md-12 mt-3">
+          <div class = "text-center p-1">
+            <h1>UFO Sightings</h1>
+          </div>
+        </div>
+      </div>
+      
+      <div class = "row">
+      <!-- Column for filter menu -->
+        <div class="col-md-3">
+          <form class = "font-weight-light border border-secondary rounded-lg">
+            <div class="form-row pr-2 pl-1">
+              <div class="col">
+                <fieldset>  
+                  <legend class = "p-2 border-bottom border-info">Filter Search</legend>
+                  
+                    <!-- Inputs for each filter field -->
+
+                    <div class = "mb-1">
+                    <label class = "m-1" for="datetime">Date</label>
+                    <select class="form-control custom-select" id="datetime">
+                      <option selected value = "no filter">No filter</option>
+                      <option value="1/1/2010">1/1/2010</option>
+                      <option value="1/2/2010">1/2/2010</option>
+                      <option value="1/3/2010">1/3/2010</option>
+                      <option value="1/4/2010">1/4/2010</option>
+                      <option value="1/5/2010">1/5/2010</option>
+                      <option value="1/6/2010">1/6/2010</option>
+                      <option value="1/7/2010">1/7/2010</option>
+                      <option value="1/8/2010">1/8/2010</option>
+                      <option value="1/9/2010">1/9/2010</option>
+                      <option value="1/10/2010">1/10/2010</option>
+                      <option value="1/11/2010">1/11/2010</option>
+                      <option value="1/12/2010">1/12/2010</option>
+                      <option value="1/13/2010">1/13/2010</option>
+                    </select>
+                    </div>
+                    
+                    <div class = "mb-1">
+                    <label class = "m-1" for="city">City</label>
+                    <input class = "form-control m-1" id="city" type="text" placeholder="example: wichita">
+                    </div>
+                    
+                    <div class = "mb-1">
+                    <label class = "m-1" for="state">State (two letter abbr.)</label>
+                    <input class = "form-control m-1" id="state" type="text" placeholder="example: nc">
+                    </div>
+
+                    <div class = "mb-1">
+                    <label class = "m-1" for="country">Country</label>
+                    <select class="form-control custom-select" id="country">
+                        <option selected value = "no filter">No filter</option>
+                        <option value="us">United States</option>
+                        <option value="ca">Canada</option>
+                    </select>
+                    </div>
+
+                    <div class = "mb-1">
+                    <label class = "m-1" for="shape">Shape</label>
+                    <select class="form-control custom-select" id="shape">
+                      <option selected value = "no filter">No filter</option>
+                      <option value="chevron">chevron</option>
+                      <option value="cigar">cigar</option>
+                      <option value="circle">circle</option>
+                      <option value="cross">cross</option>
+                      <option value="cylinder">cylinder</option>
+                      <option value="disk">disk</option>
+                      <option value="fireball">fireball</option>
+                      <option value="flash">flash</option>
+                      <option value="formation">formation</option>
+                      <option value="light">light</option>
+                      <option value="other">other</option>
+                      <option value="oval">oval</option>
+                      <option value="rectangle">rectangle</option>
+                      <option value="sphere">sphere</option>
+                      <option value="teardrop">teardrop</option>
+                      <option value="triangle">triangle</option>
+                      <option value="unknown">unknown</option>
+                    </select>
+                    </div>
+
+                    <!-- Button for filtering -->
+                    
+                    <button type="button" id="button" class="btn btn-info btn-lg mt-4 mb-3 mx-auto" style= "display: block; width: 130px;">Filter Table</button>
+                  
+                </fieldset>
+              </div>  
+          </div>
+          </form>
+        </div>
+
+        <!-- Table to be filled in with values -->
+
+        <div class="col-md-9 min-vh-100">
+          <div id="table-area">
+            <table id="ufo-table" class="table font-weight-light text-white mt-2">
+              <thead>
+                <tr>
+                  <th class="table-head">Date</th>
+                  <th class="table-head">City</th>
+                  <th class="table-head">State</th>
+                  <th class="table-head">Country</th>
+                  <th class="table-head">Shape</th>
+                  <th class="table-head">Duration</th>
+                  <th class="table-head">Comments</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mb-3">
+          <div class="col-md-12">
+            <footer class="footer">
+              <p class="text-right">Photo by Artem Kovalev on Unsplash</p>
+            </footer>
+          </div>
+    </div>
+    
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.js"></script>
+  <script src="static/js/data.js"></script>
+  <script src="static/js/app.js"></script>
+</body>
+
+</html>

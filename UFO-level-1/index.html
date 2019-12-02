@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+  <meta charset="utf-8">
+  <title>UFO Finder</title>
+  <link rel="stylesheet" href="static/css/bootstrap.css">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</head>
+
+<body class = "font-weight-light" style = "background: url(static/images/background.jpg) no-repeat center center fixed; 
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;">
+  <div class="wrapper" >
+    <nav class="navbar navbar-default">
+        <div class="navbar-header">
+      </div>
+    </nav>
+    
+    <div class="container">
+      <div row>
+        <div col-md-12>
+          <div class = "text-center font-weight-light">
+            <h2>UFO Sightings</h2>
+          </div>
+        </div>
+      </div>
+      
+      <div class="row margin-top-50">
+        
+        <div class="col-md-2 border border-secondary">
+          <form class = "font-weight-light">
+            <fieldset>
+              <div class="form-group row">
+                <legend class = "m-1">Filter Search</legend>
+                <label class = "m-1" for="datetime">Enter a Date<br>(01/01/2010 to 01/13/2010)<br></label>
+                <input class = "form-control m-1" id="datetime" type="text" placeholder="mm/dd/yyyy">
+                <button type="button" id="button" class="btn btn-secondary m-1">Filter Table</button>
+              </div>
+            </fieldset>
+          </form>
+        </div>
+
+        <div class="col-md-10 border border-secondary min-vh-100">
+          <div id="table-area">
+            <table id="ufo-table" class="table font-weight-light">
+              <thead>
+                <tr>
+                  <th class="table-head">Date</th>
+                  <th class="table-head">City</th>
+                  <th class="table-head">State</th>
+                  <th class="table-head">Country</th>
+                  <th class="table-head">Shape</th>
+                  <th class="table-head">Duration</th>
+                  <th class="table-head">Comments</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="row margin-top-50">
+          <div class="col-md-12 border border-secondary">
+            <footer class="footer">
+              <span class="bottom">Photo by Artem Kovalev on Unsplash</span>
+            </footer>
+          </div>
+    </div>
+    
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.js"></script>
+  <script src="static/js/data.js"></script>
+  <script src="static/js/app.js"></script>
+</body>
+
+</html>
